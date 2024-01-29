@@ -9,64 +9,6 @@ ollama_openhermes = Ollama(model="openhermes")
 os.environ["OPENAI_API_KEY"] = "sk-1111"
 
 
-# # Create a Researcher agent
-# researcher = Agent(
-#     role='Researcher',
-#     goal='Develop comprehensive ideas to teach a beginner about a specified topic',
-#     backstory='With deep expertise in the subject, your mission is to break down complex concepts and create insightful explanations for beginners.',
-#     verbose=True,
-#     llm=ollama_openhermes
-# )
-
-# # Create a Writer agent
-# writer = Agent(
-#     role='Writer',
-#     goal='Compose a clear and engaging piece of text to explain the chosen topic',
-#     verbose=True,
-#     backstory='As a skilled communicator, your task is to transform the research ideas provided by the Researcher into an informative and accessible text.',
-#     llm=ollama_openhermes
-# )
-
-# # Create an Examiner agent
-# examiner = Agent(
-#     role='Examiner',
-#     goal='Craft 2-3 test questions and provide correct answers to evaluate comprehension of the created text',
-#     verbose=True,
-#     backstory='With an expertise in assessment, your role is to create thought-provoking questions to gauge the understanding of learners based on the written text.',
-#     llm=ollama_openhermes
-# )
-
-# # Task for the Researcher
-# research_task = Task(
-#     description='Develop comprehensive ideas to teach a beginner about the specified topic',
-#     agent=researcher
-# )
-
-# # Task for the Writer
-# write_task = Task(
-#     description='Compose a clear and engaging piece of text to explain the chosen topic using research ideas',
-#     agent=writer
-# )
-
-# # Task for the Examiner
-# exam_task = Task(
-#     description='Craft 2-3 test questions and provide correct answers to evaluate comprehension of the created text',
-#     agent=examiner
-# )
-
-# # Instantiate your crew with a sequential process
-# educational_crew = Crew(
-#     agents=[researcher, writer, examiner],
-#     tasks=[research_task, write_task, exam_task],
-#     process=Process.sequential,
-#     llm=ollama_openhermes
-# )
-
-# # Get your crew to work!
-# result = educational_crew.kickoff()
-
-# print("######################")
-# print(result)
 class InteractiveAgent(Agent):
     def interact(self, prompt):
         # Allow the agent to interact with the user or external inputs
